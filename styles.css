@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Bitter:wght@300;400;500&display=swap");
+body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Bitter", serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(to top, black, rgb(46, 46, 46));
+}
+
+.battery {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: gray;
+  width: 6rem;
+  height: 12rem;
+  border-radius: 0.7rem;
+  overflow: hidden;
+  animation: shadow 2s ease-in infinite;
+  animation-delay: 6s;
+}
+
+@keyframes shadow {
+  0% {
+    box-shadow: none;
+  }
+  50% {
+    box-shadow: 0 0 15px rgb(0, 255, 13);
+  }
+  100% {
+    box-shadow: none;
+  }
+}
+
+.fill {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  z-index: 1;
+  animation: charging 4s ease-in-out forwards;
+  animation-delay: 2s;
+}
+
+.battery label {
+  position: absolute;
+  color: white;
+  font-size: 1.2rem;
+  z-index: 2;
+  font-weight: bold;
+}
+
+@keyframes charging {
+  0% {
+    height: 0%;
+    background-color: red;
+  }
+  20% {
+    background-color: red;
+  }
+  50% {
+    background-color: yellow;
+  }
+  60% {
+    background-color: yellow;
+  }
+  100% {
+    height: 100%;
+    background-color: rgb(0, 255, 13);
+  }
+}
+.wire {
+  position: absolute;
+  width: 0.7rem;
+  z-index: -2;
+  bottom: 0;
+  background-image: linear-gradient(to bottom, white, black);
+  animation: cwire 2s ease-in-out forwards;
+  box-shadow: 0 0 15px white;
+  border-radius: 1rem;
+}
+
+@keyframes cwire {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 50%;
+  }
+}
